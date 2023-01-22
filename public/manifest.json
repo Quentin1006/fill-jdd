@@ -23,7 +23,7 @@
       },
       {
         "run_at" : "document_idle",
-        "js": ["./static/js/after.js"],
+        "js": ["./static/js/sub.js"],
         "matches": [
           "https://*/*",
           "http://*/*"

@@ -3,14 +3,14 @@ module.exports = {
     configure: (webpackConfig, { env, paths }) => {
       return {
         ...webpackConfig,
+        mode: "development",
         entry: {
           main: "./src/index.tsx",
-          sub: "./src/services/sub.ts",
-          background: "./src/services/background.ts",
-          before: "./src/services/before.ts",
-          after: "./src/services/after.ts",
+          sub: "./src/background/sub.ts",
+          background: "./src/background/background.ts",
+          before: "./src/content_scripts/before.ts",
+          after: "./src/content_scripts/after.ts",
         },
-        devtool: false,
         output: {
           ...webpackConfig.output,
           filename: "static/js/[name].js",
