@@ -1,0 +1,45 @@
+{
+    "$schema": "https://json.schemastore.org/chrome-manifest",
+    "name": "fill-jdd",
+    "description": "Fill JDD",
+    "homepage_url": "https://www.quentin-sahal.fr",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "icons": {
+        "128": "./fill-jdd.png"
+    },
+    "action": {
+      "default_title": "Fill JDD",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "run_at" : "document_start",
+        "js": ["before.js"],
+        "matches": [
+          "https://*/*",
+          "http://*/*"
+        ]
+      },
+      {
+        "run_at" : "document_idle",
+        "js": ["after.js"],
+        "matches": [
+          "https://*/*",
+          "http://*/*"
+        ],
+        "all_frames": true
+      }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "permissions": [
+      "tabs",
+      "scripting"
+    ],
+    "host_permissions": [
+      "https://*/*",
+      "http://*/*"
+    ]
+  }
