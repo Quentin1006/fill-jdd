@@ -2,3 +2,5 @@
 (function () {
   console.log("execute.js executedddd");
 })();
+
+export {};

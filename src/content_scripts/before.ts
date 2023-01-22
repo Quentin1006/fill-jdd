@@ -2,3 +2,5 @@
 (function () {
   console.log("before.js executedee");
 })();
+
+export {};

@@ -1,6 +1,8 @@
-function applyCreds(data) {
-  const usernameInput = document.querySelector("#username");
-  const passwordInput = document.querySelector("#password");
+import { CredsData } from "../typings";
+
+function applyCreds(data: CredsData) {
+  const usernameInput = document.querySelector<HTMLInputElement>("#username");
+  const passwordInput = document.querySelector<HTMLInputElement>("#password");
 
   if (usernameInput && passwordInput) {
     usernameInput.value = data.login;
@@ -14,3 +16,5 @@ chrome.runtime.onMessage.addListener(function ({ data }) {
 
   applyCreds(data);
 });
+
+export {};
