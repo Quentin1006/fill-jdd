@@ -70,7 +70,7 @@ export const StringInput = ({ name, state, onChange }: any) => {
   );
 };
 
-export const AddJDD = ({ updateCollection }: any) => {
+export const AddJDD = ({ addToCollection }: any) => {
   const [displayForm, setDisplayForm] = useState(false);
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -83,7 +83,7 @@ export const AddJDD = ({ updateCollection }: any) => {
     };
 
     console.log({ newJDD });
-    updateCollection(newJDD);
+    addToCollection(newJDD);
     dispatch({ type: ActionsType.RESET, value: "" });
   };
 
