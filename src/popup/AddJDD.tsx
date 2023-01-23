@@ -63,9 +63,11 @@ const reducer = (state: State, action: Action): State | never => {
 
 export const StringInput = ({ name, state, onChange }: any) => {
   return (
-    <label style={{ display: "flex", gap: "10px" }}>
-      {name} :
-      <input type="text" value={state.value} onChange={onChange} />
+    <label style={{ display: "flex", gap: "5px", boxSizing: "border-box" }}>
+      <div style={{ width: "40%" }}>{name} :</div>
+      <div style={{ width: "60%" }}>
+        <input type="text" value={state.value} onChange={onChange} />
+      </div>
     </label>
   );
 };
@@ -89,16 +91,22 @@ export const AddJDD = ({ addToCollection }: any) => {
 
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div>Add JDD</div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          paddingBottom: "5px",
+        }}
+      >
+        <div>FILL-JDD</div>
         {displayForm ? (
-          <button onClick={() => setDisplayForm(false)}> Close</button>
+          <button onClick={() => setDisplayForm(false)}> x</button>
         ) : (
           <button onClick={() => setDisplayForm(true)}>Add JDD</button>
         )}
       </div>
       {displayForm ? (
-        <form style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        <form style={{ display: "flex", flexDirection: "column", gap: "5px" }}>
           <StringInput
             name="login"
             state={state.login}

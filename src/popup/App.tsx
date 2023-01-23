@@ -73,28 +73,32 @@ function App() {
 
   return (
     <>
-      <h4>Liste de JDD</h4>
       <AddJDD addToCollection={addToCollection} />
       <hr />
-      <label htmlFor="filtre-jdd">
-        Filtre : &nbsp;
-        <input
-          type="text"
-          id="filtre-jdd"
-          name="filtre-jdd"
-          placeholder="Enter keyword"
-          value={filterValue}
-          onChange={handleFilterClick}
-        />
-      </label>
+      <div style={{ padding: "5px 0", display: "none" }}>
+        <label htmlFor="filtre-jdd">
+          Filtre : &nbsp;
+          <input
+            type="text"
+            id="filtre-jdd"
+            name="filtre-jdd"
+            placeholder="Enter keyword"
+            value={filterValue}
+            onChange={handleFilterClick}
+          />
+        </label>
+      </div>
+
       <hr />
       <div style={{ display: "flex" }}>
         <table>
           <thead>
             <tr>
+              <th></th>
               <th>login</th>
               <th>password</th>
               <th>description</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
